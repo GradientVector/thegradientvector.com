@@ -3,8 +3,6 @@ using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.CommandLine;
-using Microsoft.Extensions.Logging;
 
 namespace thegradientvector.com
 {
@@ -12,7 +10,9 @@ namespace thegradientvector.com
     {
         public static void Main(string[] args)
         {
-            var config = new ConfigurationBuilder().AddCommandLine(args).Build();
+            var config = new ConfigurationBuilder()
+                .AddCommandLine(args)
+                .Build();
             var host = new WebHostBuilder()
               .UseConfiguration(config)
               .UseKestrel()
