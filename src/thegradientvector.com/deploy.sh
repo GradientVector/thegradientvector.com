@@ -17,5 +17,6 @@ chown -R www-data:www-data /var/aspnet/thegradientvector.com/approot
 
 # TODO - maybe comment this out once I figure out how to do it right?
 nohup /var/aspnet/thegradientvector.com/approot/run.sh &>/dev/null &
+sleep 5
 chown www-data:www-data /var/aspnet/thegradientvector.com/kestrel.sock
 
