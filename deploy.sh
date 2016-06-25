@@ -8,6 +8,11 @@ dotnet publish
 
 rm -r /var/aspnet/thegradientvector.com/approot/
 mkdir -p /var/aspnet/thegradientvector.com/approot
-cp bin/Debug/netcoreapp1.0/publish/ /var/aspnet/thegradientvector.com/approot
-chown www-data:www-data /var/aspnet/thegradientvector.com/approot
+cp -r bin/Debug/netcoreapp1.0/publish/* /var/aspnet/thegradientvector.com/approot
+cp run.sh /var/aspnet/thegradientvector.com/approot/
+chown -R www-data:www-data /var/aspnet/thegradientvector.com/approot
+
+# TODO - maybe comment this out once I figure out how to do it right?
+/var/aspnet/thegradientvector.com/approot/run.sh &
+chown www-data:www-data /var/aspnet/thegradientvector.com/kestrel.sock
 
