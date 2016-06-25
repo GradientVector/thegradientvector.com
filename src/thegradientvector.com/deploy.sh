@@ -16,6 +16,6 @@ chmod +x /var/aspnet/thegradientvector.com/approot/run.sh
 chown -R www-data:www-data /var/aspnet/thegradientvector.com/approot
 
 # TODO - maybe comment this out once I figure out how to do it right?
-/var/aspnet/thegradientvector.com/approot/run.sh &
+nohup /var/aspnet/thegradientvector.com/approot/run.sh &>/dev/null &
 chown www-data:www-data /var/aspnet/thegradientvector.com/kestrel.sock
 
